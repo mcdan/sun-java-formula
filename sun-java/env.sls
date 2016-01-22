@@ -1,9 +1,9 @@
-{%- from 'sun-java/settings.sls' import java with context %}
+{%- from 'sun-java-formula/sun-java/settings.sls' import java with context %}
 
 jdk-config:
   file.managed:
     - name: /etc/profile.d/java.sh
-    - source: salt://sun-java/java.sh
+    - source: salt://sun-java-formula/sun-java/java.sh
     - template: jinja
     - mode: 644
     - user: root
